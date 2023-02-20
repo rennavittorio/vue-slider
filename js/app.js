@@ -39,11 +39,29 @@ createApp({
     data() {
         return {
             slides: images,
-
+            indexActiveSlide: 0,
         }
     },
 
     methods: {
+        goForward (){
+            if (this.indexActiveSlide < this.slides.length - 1){
+                this.indexActiveSlide++;
+                console.log(this.indexActiveSlide);
+            } else {
+                this.indexActiveSlide = 0;
+                console.log(this.indexActiveSlide);
+            }
+        },
 
+        goBackward (){
+            if (this.indexActiveSlide > 0){
+                this.indexActiveSlide--;
+                console.log(this.indexActiveSlide);
+            } else {
+                this.indexActiveSlide = this.slides.length - 1;
+                console.log(this.indexActiveSlide);
+            }
+        }
     }
 }).mount('#app')
