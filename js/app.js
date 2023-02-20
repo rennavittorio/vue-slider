@@ -40,6 +40,7 @@ createApp({
         return {
             slides: images,
             indexActiveSlide: 0,
+            clock: undefined,
         }
     },
 
@@ -62,6 +63,18 @@ createApp({
                 this.indexActiveSlide = this.slides.length - 1;
                 console.log(this.indexActiveSlide);
             }
-        }
+        },
+
+        autoplay(){
+            if (this.clock === undefined){
+                this.clock = setInterval(this.goForward, 500);
+            }
+        },
+
+        stopAutoplay(){
+            clearInterval(this.clock);
+            this.clock = undefined;
+        },
     }
+
 }).mount('#app')

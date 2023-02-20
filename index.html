@@ -19,7 +19,7 @@
     <div id="app">
         <section class="py-5">
             <div class="container">
-                <div class="carousel d-flex justify-content-center">
+                <div class="carousel d-flex justify-content-center" @mouseenter="autoplay()" @mouseleave="stopAutoplay()">
     
                     <div v-for="(slide, index) in slides" :class="['slide', (index === indexActiveSlide) ? 'active' : '']">
                         <img :src="slide.image" alt="">
