@@ -21,8 +21,22 @@
             <div class="container">
                 <div class="carousel d-flex justify-content-center">
     
+                    <div v-for="(slide, index) in slides" :class="['slide', (index === 0) ? 'active' : '']">
+                        <img :src="slide.image" alt="">
+                        <div class="slide__content">
+                            <h1 class="text-end">
+                                {{ slide.title }}
+                            </h1>
+                            <p class="slide__text text-end">
+                                {{ slide.text }}
+                            </p>
+                        </div>
+
+                    
+                    </div>
+
                     <!-- slides prototype -->
-                    <div class="slide__title slide active">
+                    <!-- <div class="slide__title slide active">
                         <img src="./assets/01.webp" alt="">
                         <div class="slide__content">
                             <h1 class="text-end">
@@ -32,7 +46,7 @@
                                 Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end prototype -->
     
                     <div class="carousel__arrow arrow-left">

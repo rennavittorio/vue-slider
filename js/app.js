@@ -38,11 +38,12 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            message: 'Hello Vue!',
+            slides: images,
+
         }
     },
 
     methods: {
-        
+
     }
 }).mount('#app')
